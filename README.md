@@ -100,7 +100,7 @@ sudo systemctl restart apache2
 **Access Your Application**  
   
 \- **Firebase Hosting:** Visit the provided Firebase hosting URL after deployment.  
-\- **Apache2:** Visit \`http://your-server-ip/\` to access your project.
+\- **Apache2:** Visit `http://your-server-ip/` to access your project.
 
 Live Demo
 ---------
