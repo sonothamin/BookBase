@@ -24,8 +24,8 @@ cd BookBase
 \- Add a new web app and register it.  
 \- Copy the Firebase configuration keys provided.  
   
-3\. **Configure \`firebaseConfig.js\`:**  
-\- Open \`firebaseConfig.js\` in the project.  
+3\. **Configure `firebaseConfig.js`:**  
+\- Open `firebaseConfig.js` in the project.  
 \- Replace the placeholders with your Firebase configuration.  
   
 ```
@@ -61,8 +61,8 @@ firebase init
   
 \- Select "Hosting" when prompted.  
 \- Choose the project you created.  
-\- Specify \`public\` as the directory.  
-\- Choose \`No\` for configuring as a single-page app.  
+\- Specify `public` as the directory.  
+\- Choose `No` for configuring as a single-page app.  
   
 4\. **Deploy the App:**  
   
@@ -90,7 +90,7 @@ sudo cp -r /path-to-your-project/* /var/www/html/
   
 3\. **Configure Apache2:**  
   
-\- Ensure your Apache configuration allows \`index.html\` as the default file.  
+\- Ensure your Apache configuration allows `index.html` as the default file.  
 \- Restart Apache to apply changes:  
   
 ```
