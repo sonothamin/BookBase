@@ -1,6 +1,3 @@
-Here’s the correctly formatted README content:
-
-```markdown
 <h1 align="center">BookBase</h1>
 
 <p align="left">A web application designed to manage and display a collection of books. This application uses Firebase and Firestore as the backend database for storing book metadata, including titles, authors, cover images, blurbs, and more. The frontend is built using standard web technologies: HTML, CSS, and JavaScript. The application is responsive, allowing it to display properly across various device sizes.</p>
@@ -115,4 +112,3 @@ cd BookBase
 - **Firebase Hosting:** Visit the provided Firebase hosting URL after deployment.<br>
 - **Apache2:** Visit `http://your-server-ip/` to access your project.
 </p>
-```
