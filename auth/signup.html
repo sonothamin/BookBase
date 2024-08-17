@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication | BookBase</title>
+    <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Firebase App -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="/firebaseConfig.js"></script>
+    <script defer src="validation.js"></script>
+    <script defer src="forgetPass.js"></script>
+    </head>
+<body>
+    <div class="text-center">
+        <h1 id="signupTitle" class="herotitle signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</h1>
+    </div>
+    <hr id="hero-hrln">
+    <div class="col mb-3 text-center">
+        <img src="/BBlogo.png" id="header-brand-logo"><a class="h5" href="/#">BookBase</a><small class="subtitle">v0.2.1-alpha</small>
+    </div>
+    <div id="alertBox" class="container mt-3"></div>
+    <div class="container rounded mb-5">
+        <form id="signupForm" novalidate>
+            <div id="signup" class="field-group">
+                <div class="field">
+                    <label for="email" class="labels"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your valid email address" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid email.
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="confirmemail" class="labels"><i class="fa fa-envelope-o"></i> Confirm Email Address</label>
+                    <input type="email" class="form-control" id="confirmemail" name="confirmemail" placeholder="Enter your email address again" required>
+                    <div class="invalid-feedback">
+                        Email addresses do not match.
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="setpassword" class="labels"><i class="fa fa-lock"></i> Password</label>
+                    <input type="password" class="form-control" id="setpassword" name="setpassword" placeholder="Must include alphanumeric and special characters">
+                    <div class="invalid-feedback">
+                        Password must be at least 8 characters long and include at least one letter, one number, and one special character.
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="confpassword" class="labels"><i class="fa fa-unlock-alt"></i> Confirm Password</label>
+                    <input type="password" class="form-control" id="confpassword" name="confpassword" placeholder="Enter your password again">
+                    <div class="invalid-feedback">
+                        Passwords do not match.
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button id="btn-signup" type="submit" class="btn btn-lg btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Sign Up</button>
+                </div>
+            </div>
+          
+        </form>
+ 	    <div id="help-row" class='row'>
+		<a class="sonoth" href="./login.html">Have an account?<u> Login instead.</u></a>
+                <a class="sonoth mt-2" href="./index.html">Need Help?</a>
+	    </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

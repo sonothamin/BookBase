@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book | BookBase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+     <!-- Firebase App -->
+     <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+     <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+     <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+     <script src="/firebaseConfig.js"></script>
+     <script defer src="formScript.js"></script>
+ </body>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h1 id="herotitle" class="text-center" style="padding: 40px 0px 5px 0px;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a new book</h1>
+    </div>
+    <hr id="hero-hrln">
+    <div class= "col text-center"><text class="h5">BookBase </text><small class="subtitle">v0.2.1-alpha</small></div>
+    <div class="container rounded mb-5">
+        <form>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="row align-content-center"><img class="coverprev" style="display: none;" id="CoverPreview"  alt="Cover"></div>
+                    
+                    <div class="field-group">
+                        <span class="field-group-label"><i class="fa fa-book" aria-hidden="true"></i> Basics<hr></span>
+                        <div class="field">
+                            <label for="title" class="labels">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Exactly as found on the cover" required>
+                        </div>
+                        <div class="field">
+                            <label for="authors" class="labels">Authors</label>
+                            <input type="text" class="form-control" id="authors" name="authors" placeholder="Use comma for multiple" required>
+                        </div>
+                        <div class="field">
+                            <label for="contrib" class="labels">Contributors</label>
+                            <input type="text" class="form-control" id="contributors" name="contributors" placeholder="Use comma for multiple">
+                        </div>
+                        <div class="field">
+                        <label id="upload-button">
+                            <input type="file" style="display: none;" id="CoverInput" onchange="readURL(this);">
+                            <span id="upload">
+                                <i class="fa fa-cloud-upload"></i>
+                                Upload cover photo</span>
+                        </label>
+                       
+                        </div>
+                    </div>
+                    
+                    <div class="field-group">
+                        <span class="field-group-label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Description <hr></span>
+                        <div class="field">
+                            <label for="blurb" class="labels">Blurb</label>
+                            <textarea class="form-control" id="blurb" name="blurb" placeholder="Text on the backcover or either flaps"></textarea>
+                        </div>
+                        <div class="field">
+                            <label for="catagory" class="labels">Catagory</label>
+                            <input type="text" class="form-control" id="catagory" name="catagory" placeholder="Enter book category" required>
+                        </div>
+                        <div class="field">
+                            <label for="genres" class="labels">Genres</label>
+                            <input type="text" class="form-control" id="genres" name="genres" placeholder="Enter book genres (comma separated)">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <span class="field-group-label"><i class="fa fa-search" aria-hidden="true"></i> Identifiers <hr></span>
+                        <div class="field">
+                            <label for="isbn" class="labels">ISBN</label>
+                            <input type="text" class="form-control" id="isbn" name="isbn" placeholder="See copyright page or barcode">
+                        </div>
+                        <div class="field">
+                            <label for="isbn13" class="labels">ISBN-13</label>
+                            <input type="text" class="form-control" id="isbn13" name="isbn13" placeholder="Enter ISBN-13">
+                        </div>
+                        <div class="field">
+                            <label for="goodreads_id" class="labels">Goodreads ID</label>
+                            <input type="text" class="form-control" id="goodreads_id" name="goodreads_id" placeholder="Enter Goodreads ID">
+                        </div>
+                    </div>
+                    <div class="field-group form-check">
+                        <input class="form-check-input" type="checkbox" id="chkSeries"/>
+                        <label class="form-check-label" for="chkSeries">
+                            Is this book part of a series?
+                        </label>
+                    </div>
+                    <div id="series-info" class="field-group" style="display: none;">
+                        <span class="field-group-label"><i class="fa " aria-hidden="true"></i> Series Info <hr></span>
+                        <div class="field">
+                            <label for="seriesname" class="labels">Series Name</label>
+                            <input type="text" class="form-control" id="seriesname" name="seriesname" placeholder="Enter series name">
+                        </div>
+                        <div class="field">
+                            <label for="series_number" class="labels">Series Number</label>
+                            <input type="text" class="form-control" id="series_number" name="series_number" placeholder="Enter series number">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    
+
+                    <div class="field-group">
+                        <span class="field-group-label"><i class="fa fa-cog" aria-hidden="true"></i> Technical Specs <hr></span>
+                        <div class="field">
+                            <label for="page_count" class="labels">Page Count</label>
+                            <input type="number" class="form-control" id="page_count" name="page_count" placeholder="Total pages">
+                        </div>
+                        <div class="field">
+                            <label for="tags" class="labels">Tags</label>
+                            <input type="text" class="form-control" id="tags" name="tags" placeholder="Enter tags (comma separated)">
+                        </div>
+                        <div class="field">
+                            <label for="edition" class="labels">Edition</label>
+                            <input type="text" class="form-control" id="edition" name="edition" placeholder="Enter edition">
+                        </div>
+                        <div class="field">
+                            <label for="pub_year" class="labels">Publication Year</label>
+                            <input type="number" class="form-control" id="pub_year" name="pub_year" placeholder="Enter publication year">
+                        </div>
+                        <div class="field">
+                            <label for="publisher" class="labels">Publisher</label>
+                            <input type="text" class="form-control" id="publisher" name="publisher" placeholder="Enter 'self' if self published ">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <span class="field-group-label"><i class="fa fa-info" aria-hidden="true"></i> Additional <hr></span>
+                        <div class="field">
+                            <label for="avg_user_rating" class="labels">Average Rating</label>
+                            <input type="number" class="form-control" id="avg_user_rating" name="avg_user_rating" step="0.1" placeholder="Enter average rating">
+                        </div>
+                        <div class="field">
+                            <label for="awards" class="labels">Awards</label>
+                            <input type="text" class="form-control" id="awards" name="awards" placeholder="National, International or other awards">
+                        </div>
+                        <div class="field">
+                            <label for="alt_title" class="labels">Alternateive Title</label>
+                            <input type="text" class="form-control" id="alt_title" placeholder="Romanized, Translated or Other titles">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <span class="field-group-label"><i class="fa fa-globe" aria-hidden="true"></i> Regional Info <hr/></span>
+                        <div class="col-md-12 field">
+                            <label class="labels" for="language">Language</label>
+                            <input type="text" class="form-control" id="language" placeholder="Language of the book text">
+                        </div>
+                        <div class="col-md-12 field">
+                            <label class="labels" for="regions">Regions</label>
+                            <input type="text" class="form-control" id="regions" placeholder="Regions where the book was pulished">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="btn-submit" type="submit" onclick="submitForm()" class="btn btn-lg btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Book</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    $('#CoverPreview').attr('src', e.target.result).show();
+                    $("#CoverPreview").show();
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(document).ready(function () {
+            $('#chkSeries').change(function () {
+                $('#series-info').toggle(this.checked);
+            });
+        });
+    </script>
+</body>
+</html>

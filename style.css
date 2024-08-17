@@ -1,0 +1,174 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+
+  }
+
+
+a,
+a:focus,
+a:hover {
+  color: #fff;
+  text-decoration: none
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+html,
+body {
+  height: 100%;
+  background: #161616;
+  font-family: Poppins, sans-serif;
+  background-image: linear-gradient(to right bottom, #080034, #0b012c, #0c0224, #0b031d, #080415, #080513, #090711, #09080e, #0c0a13, #0e0d17, #0f0f1b, #10111f);
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+
+}
+
+.lead{
+font-size: 1.2rem;
+font-style: italic;
+font-family: "Gentium Book Plus", serif;
+margin-top: -10px;
+}
+
+@media screen and (max-width: 600px) {
+  #headbrand {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+}
+
+.cover {
+  padding: 0 1.5rem;
+}
+.cover{
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+.mastfoot {
+  color: #5a5a5a;
+  font-size: 0.8rem;
+}
+
+.btn-lg{
+    background-color: #272a5c;
+    padding: .60rem 1rem;
+    border: none;
+    color: #c9e1fc;
+    font-weight: 400;
+    font-size: 0.8rem;
+    border-radius: 60px;
+    transition: ease-in-out 200ms;
+}
+
+.btn-lg:hover{
+    background-color: #5b63db;
+    border: none;
+    color: #021e35;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    transition: ease 400ms;
+}   
+
+#sonoth{
+    color: #b6b6b6;
+    transition: ease-in-out 200ms;
+}
+#sonoth:hover{
+    color: #e4e4e4;
+    transition: ease 200ms;
+    font-size: 1rem;
+}
+
+
+#signup{
+    color: #fdfdfd;
+}
+
+.cover-heading{
+    font-size: 2.6rem;
+    text-shadow: 0px 0px 20px #5b63db;
+}
+
+
+*{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#header-brand-logo{
+  width: 20px;
+  height: 20px;
+  margin: 0px 10px 4px 0;
+}

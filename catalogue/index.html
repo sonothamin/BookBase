@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Catalogue</title>
+  <script src="https://kit.fontawesome.com/fdd3028ff0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="/firebaseConfig.js"></script>
+</head>
+
+<body class="w-100 h-100 d-flex flex-column">
+
+  <header class="masthead">
+    <div class="inner">
+      <a href="/#">
+        <h4 id="headbrand" class="masthead-brand"><img src="/BBlogo.png"
+            id="header-brand-logo">BookBase</h4>
+      </a>
+      <nav class="nav nav-masthead justify-content-center">
+        <a id="signin" class="nav-link" href="/auth/login.html">Login</a>
+        <a id="signup" class="nav-link" href="/auth/signup.html">Sign Up</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main role="main" class="inner container cover">
+    <div id="book-list" class="row d-flex mx-auto"></div>
+  </main>
+
+  <footer class="mastfoot text-center mt-auto">
+    <div class="inner">
+      <p> &copy; 2024 <a id="sonoth" href="https://sonothamin.github.io/">Sonoth Amin</a></p>
+    </div>
+  </footer>
+  <script src="./fetch.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/fdd3028ff0.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
+  <script src="/firebaseConfig.js"></script>
+  <script src="./viewBook.js"></script>
+</head>
+
+<body class="w-100 h-100 d-flex flex-column">
+
+  <header class="masthead">
+    <div class="inner">
+      <a href="/">
+        <h4 id="headbrand" class="masthead-brand"><img src="/BBlogo.png" id="header-brand-logo">BookBase</h4>
+      </a>
+      <nav class="nav nav-masthead justify-content-center">
+        <a id="signin" class="nav-link" href="/auth/login.html">Login</a>
+        <a id="signup" class="nav-link" href="/auth/signup.html">Sign Up</a>
+      </nav>
+    </div>
+
+  </header>
+  <main role="main" class="inner container cover">
+    <div class="row justify-content-center align-items-center g-2">
+      
+      <img id="book-cover" src="" alt="Book Cover" class="col-md-4 img-fluid rounded-start">      
+      <div class="col-md-8 details">
+        <div class="d-flex align-items-center">
+          <h2 id="book-title" class="title"></h2>
+          <small id="book-year" class="year"></small>
+        </div>
+        <h4 id="book-author" class="author"></h4>
+        <p id="book-blurb" class="blurb"></p>
+        <div id="detail-bar" class="row">
+          <div id="isbn-div" class="col justify-content-center text-center horz-detail">
+            <span class="details-caption"><i class="fa-solid fa-book"></i> ISBN</span>
+            <p class="info text-center" id="ISBN"></p>
+          </div>
+          <div id="edition-div" class="col justify-content-center text-center horz-detail">
+            <span class="details-caption"><i class="fa-solid fa-code-compare"></i> Edition</span>
+            <p class="info text-center" id="Edition"></p>
+          </div>
+          <div id="language-div" class="col justify-content-center text-center horz-detail">
+            <span class="details-caption"><i class="fa-solid fa-language"></i> Language</span>
+            <p class="info text-center" id="Language"></p>
+          </div>
+          <div id="goodreads-div" class="col justify-content-center text-center horz-detail">
+            <span class="details-caption"><i class="fab fa-goodreads"></i> GoodReads</span>
+            <a id="GoodReadsID" class="info text-center" href="#" target="_blank"></a>
+          </div>
+          <div id="pagecount-div" class="col justify-content-center text-center horz-detail">
+            <span class="details-caption"><i class="fa-solid fa-file-lines"></i> Pages</span>
+            <p class="info text-center" id="PageCount"></p>
+          </div>
+          <div id="publisher-div" class="col justify-content-center text-center horz-detail">
+            <span class="details-caption"><i class="fa-solid fa-book-open-reader"></i> Publisher</span>
+            <p class="info text-center" id="Publisher"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mastfoot text-center mt-auto">
+    <div class="inner">
+      <p> &copy; 2024 <a id="sonoth" href="https://sonothamin.github.io/">Sonoth Amin</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>

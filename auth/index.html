@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication | BookBase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="herotitle"><i class="fa fa-lock" aria-hidden="true"></i> Authentication</h1>
+    </div>
+    <hr id="hero-hrln">
+    <div class="col mb-3 text-center">
+        <img src="/BBlogo.png" id="header-brand-logo"><a class="h5" href="/#">BookBase</a><small class="subtitle">v0.2.1-alpha</small>
+    </div>
+    <div class="cont-auth-menu container d-flex flex-column align-items-center justify-content-center">
+        
+        <div class="btn-group btn-group-lg" role="group" aria-label="auth-options">
+            <a class="btn btn-secondary" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+            <a class="btn btn-secondary" href="./signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+            <a class="btn btn-secondary" href="./recover.html"><i class="fa fa-key" aria-hidden="true"></i> Recover</a>
+        </div>
+        <div class=cont-sub col>
+        <p class="text-center">Secure login, signup, and password recovery for managing your book collection. Ensure your account is safe and easily accessible.</span>
+        <hr>            
+        <div class="btn-group btn-group-lg" role="group" aria-label="admin-options">
+            <a class="btn btn-secondary" href="https://console.firebase.google.com/u/0/project/sonoth-bookbase/firestore/"><i class="fa fa-database" aria-hidden="true"></i> FireStore</a>
+            <a class="btn btn-secondary" href="https://app.firecms.co/p/sonoth-bookbase/"><i class="fa fa-dashboard" aria-hidden="true"></i> FireCMS</a>
+            <a class="btn btn-secondary" href="https://console.firebase.google.com/u/0/project/sonoth-bookbase/authentication/users"><i class="fa fa-fire" aria-hidden="true"></i>FireBase</a>
+            <a class="btn btn-secondary" href="./recover.html"><i class="fa fa-superpowers" aria-hidden="true"></i> Admin</a>
+        </div>
+        <p class="text-center mt-4">Powered by  <i class="fa fa-google" aria-hidden="true"></i> FireBase</span>
+        <p class="text-center">Developed and maintained by <a href="https://sonothamin.github.io/#" id=sonoth>Sonoth Amin</a></span>
+        </div>
+            <div class="mastfoot mt-auto inner">
+            <p>BookBase &copy; 2024</p>
+          </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<style>
+    body {
+    color: #ddd;
+    font-family: Poppins;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, #080034, #0b012c, #0c0224, #0b031d, #080415, #080513, #090711, #09080e, #0c0a13, #0e0d17, #0f0f1b, #10111f);
+        
+}
+
+#header-brand-logo{
+  width: 15px;
+  height: 15px;
+  margin: 0px 6px 4px 0;
+}
+
+.h5{
+    text-decoration: none;
+}
+.h5:hover{
+    color: #747474;
+}
+
+.cont-auth-menu {
+    max-width: 600px;
+    background-color: #202020;
+    border-radius: 15px;
+    min-height: 50vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+}
+
+.herotitle {
+    color: #ffffff;
+    padding: 15px 0 5px 0;
+}
+.mastfoot {
+  color: #5a5a5a;
+  font-size: 0.8rem;
+}
+
+.h5 {
+    color: #747474;
+}
+
+.subtitle {
+    color: #5a5a5a;
+    font-size: 0.8rem;
+}
+
+#hero-hrln {
+    height: 2px;
+    margin: 5px 0 15px 0;
+    background-color: gray;
+}
+
+.btn-group-lg > .btn {
+    padding: .75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+}
+
+
+.btn-group{
+    margin: 15px, 20px;
+}
+
+.btn-group-lg > .btn-secondary {
+    background-color: #272a5c;
+    color: #c9e1fc;
+}
+
+.btn-group-lg > .btn-secondary:hover {
+    background-color: #5b63db;
+    color: #021e35;
+}
+
+#hero-hrln{
+    height: 2px;
+    padding: 0;
+    margin: -10px 20.1rem 2px 20.1rem;
+    color: gray;
+}
+
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #202020;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #646464;
+    border-radius: 100px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a7a7a7;
+    transition: 0.4s;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background: #000000;  
+    transition: 0.6s;
+  }
+
+  ::-webkit-scrollbar:hover {
+    width: 20px;
+  }
+  
+.h5{
+    color: #747474;
+}
+
+.subtitle {
+    color: #5a5a5a;
+    font-size: 0.8rem;
+}
+
+#sonoth{
+    color: #b6b6b6;
+    transition: ease-in-out 200ms;
+}
+#sonoth:hover{
+    color: #e4e4e4;
+    transition: ease 200ms;
+    font-size: 1rem;
+}
+
+.cont-sub{
+    background-color: #535353;
+    color: #d3d3d3;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.8rem;
+    margin: 15px;
+}
+
+*{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+</style>
+
+</body>
+</html>
