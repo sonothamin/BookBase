@@ -5,9 +5,9 @@
 <h2 align="left">Installation & Deployment</h2>
 
 <p align="left">
-<strong>Clone the Repository</strong><br>
+<strong>Clone the Repository</strong>
 <br>
-```bash
+```
 git clone https://github.com/sonothamin/BookBase.git
 cd BookBase
 ```
@@ -49,19 +49,19 @@ cd BookBase
 <p align="left">
 1. **Install Firebase CLI:**<br>
 <br>
-   ```bash
+   ```
    npm install -g firebase-tools
    ```
 <br>
 2. **Login to Firebase:**<br>
 <br>
-   ```bash
+   ```
    firebase login
    ```
 <br>
 3. **Initialize Firebase Hosting:**<br>
 <br>
-   ```bash
+   ```
    firebase init
    ```
 <br>
@@ -72,7 +72,7 @@ cd BookBase
 <br>
 4. **Deploy the App:**<br>
 <br>
-   ```bash
+   ```
    firebase deploy
    ```
 </p>
@@ -84,7 +84,7 @@ cd BookBase
 <br>
    On Ubuntu:<br>
 <br>
-   ```bash
+   ```
    sudo apt update
    sudo apt install apache2
    ```
@@ -93,7 +93,7 @@ cd BookBase
 <br>
    - Place your project files in the Apache web root directory:<br>
 <br>
-   ```bash
+   ```
    sudo cp -r /path-to-your-project/* /var/www/html/
    ```
 <br>
@@ -102,7 +102,7 @@ cd BookBase
    - Ensure your Apache configuration allows `index.html` as the default file.<br>
    - Restart Apache to apply changes:<br>
 <br>
-   ```bash
+   ```
    sudo systemctl restart apache2
    ```
 <br>
